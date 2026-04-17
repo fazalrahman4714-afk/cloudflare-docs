@@ -63,6 +63,10 @@ Wrangler supports the following environment variables:
 
   - The [environment](/workers/wrangler/environments/) to use for Wrangler commands. This allows you to select an environment without using the `--env` flag. For example, `CLOUDFLARE_ENV=production wrangler deploy` will deploy to the `production` environment. The `--env` command line argument takes precedence over this environment variable.
 
+- `NODE_ENV` <Type text="string" /> <MetaInfo text="optional" />
+
+  - Sets the value of `process.env.NODE_ENV` in your Worker code. Defaults to `"development"` for `wrangler dev` and `"production"` for `wrangler deploy`, `wrangler versions upload`, and `wrangler build`. Refer to [Bundling](/workers/wrangler/bundling/#node_env) for more information.
+
 - `WRANGLER_SEND_METRICS` <Type text="string" /> <MetaInfo text="optional" />
 
   - Options for this are `true` and `false`. Defaults to `true`. Controls whether Wrangler can send anonymous usage data to Cloudflare for this project. You can learn more about this in our [data policy](https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md).
